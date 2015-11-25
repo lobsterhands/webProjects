@@ -3,8 +3,8 @@
 
 (function() {
 
-    var ELEM_NUM = 20;
-    var colors = ['blue', 'red'];
+    var ELEM_NUM = 100;
+    var colors = ['blue', 'red', 'green'];
 
     getRandomColor = function(array) {
         var randomColor = Math.floor(Math.random() * array.length);
@@ -23,29 +23,28 @@
         } else {
             iDiv.className += ' ' + 'red';
         }
-        //var randomColor = getRandomColor(colors);
-        //iDiv.className += ' ' + randomColor;
-        iDiv.innerHTML = i%10;
+        var randomColor = getRandomColor(colors);
+        iDiv.className += ' ' + randomColor;
+        //iDiv.innerHTML = i%10;
         gameBoard.appendChild(iDiv);
     }
 
     var children = document.getElementById('gameBoard').children;
 
     var j = 0;
-    var speed = 200;
-    console.log('Begin: j =',j);
+    var speed = 1;
     (function() {
         setTimeout(arguments.callee, speed);
         var temp = children[j+1].className;
-        console.log(temp);
-        console.log(children[j].className);
+        //console.log(temp);
+        //console.log(children[j].className);
         children[j+1].className = children[j].className;
         children[j].className = temp;
         j++;
-        console.log('j has just been incremented: j=',j);
+        //console.log('j has just been incremented: j=',j);
         if (j == ELEM_NUM-1) {
             j = 0;
-            console.log('j has been reset to zero: j=',j);
+            //console.log('j has been reset to zero: j=',j);
         }
     })();
 
