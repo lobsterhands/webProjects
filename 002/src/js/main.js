@@ -3,6 +3,7 @@
 
 (function() {
 
+    var ELEM_NUM = 20;
     var colors = ['blue', 'red'];
 
     getRandomColor = function(array) {
@@ -13,7 +14,7 @@
     var gameBoard = document.getElementById('gameBoard');
 
     //for (var i = 0; i < 100; i++) {
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < ELEM_NUM; i++) {
     var iDiv = document.createElement('div');
 
         iDiv.className = 'block';
@@ -31,14 +32,20 @@
     var children = document.getElementById('gameBoard').children;
 
     var j = 0;
+    var speed = 200;
+    console.log('Begin: j =',j);
     (function() {
-        setTimeout(arguments.callee, 50);
+        setTimeout(arguments.callee, speed);
         var temp = children[j+1].className;
+        console.log(temp);
+        console.log(children[j].className);
         children[j+1].className = children[j].className;
         children[j].className = temp;
         j++;
-        if (j == 19) {
+        console.log('j has just been incremented: j=',j);
+        if (j == ELEM_NUM-1) {
             j = 0;
+            console.log('j has been reset to zero: j=',j);
         }
     })();
 
