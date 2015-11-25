@@ -89,12 +89,15 @@ textarea {
    ========================================================================== */
 .block {
     display: inline-block;
+    text-align: center;
+    line-height: 50px;  /* centers text in 50px high block */
     margin: 5px;
     max-width: 50px;
     max-height: 50px;
     width: 4em;
     height: 4em;
     background-color: black;
+    color: white;
 }
 
 .red {
