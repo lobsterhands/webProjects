@@ -32,11 +32,14 @@
 
     var j = 0;
     (function() {
-        setTimeout(arguments.callee, 2000);
+        setTimeout(arguments.callee, 50);
         var temp = children[j+1].className;
         children[j+1].className = children[j].className;
         children[j].className = temp;
         j++;
+        if (j == 19) {
+            j = 0;
+        }
     })();
 
 
