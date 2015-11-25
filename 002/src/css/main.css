@@ -112,6 +112,10 @@ textarea {
     background-color: green;
 }
 
+.yellow {
+    background-color: yellow;
+}
+
 #container {
     width: 100%;
     height: 100%;

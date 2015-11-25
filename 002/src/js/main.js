@@ -4,7 +4,7 @@
 (function() {
 
     var ELEM_NUM = 100;
-    var colors = ['blue', 'red', 'green'];
+    var colors = ['blue', 'red', 'green', 'yellow'];
 
     getRandomColor = function(array) {
         var randomColor = Math.floor(Math.random() * array.length);
@@ -32,7 +32,8 @@
     var children = document.getElementById('gameBoard').children;
 
     var j = 0;
-    var speed = 1;
+    var speed = 0;
+
     (function() {
         setTimeout(arguments.callee, speed);
         var temp = children[j+1].className;
